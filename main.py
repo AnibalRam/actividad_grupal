@@ -40,13 +40,15 @@ while bandera_1==True:
         opcion_1=int(input("Ingrese una opcion: "))
          
         if opcion_1==1 :
-            print("Hola")
-            os.system("pause")
+            
+            Usuarios.append(agregar_contacto(Usuarios))
+            # print(Usuarios)
+            # os.system("pause")#
             
             
         elif opcion_1==2:
-            print("Hola")
-            os.system("pause")
+           mostrar_contacto(Usuarios)
+            
             
             
         elif opcion_1==3:
