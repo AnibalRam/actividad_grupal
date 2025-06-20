@@ -24,50 +24,54 @@
 import os
 from functions import *
 
+
 bandera_1=True
 Usuarios = []
 while bandera_1==True:
     os.system("cls")
     print("")
     print("###  Menu  ###")
-    print("1.	Agregar un contacto: nombre, teléfono, email.")
-    print("2.	Listar contactos: mostrar todos los contactos guardados.")
-    print("3.	Buscar un contacto por nombre.")
-    print("4.	Eliminar un contacto.")
-    print("5.	Salir del programa.")
+    print("1.   Agregar un contacto: nombre, teléfono, email.")
+    print("2.   Listar contactos: mostrar todos los contactos guardados.")
+    print("3.   Buscar un contacto por nombre.")
+    print("4.   Eliminar un contacto.")
+    print("5.   Salir del programa.")
     print("")
     try:
         opcion_1=int(input("Ingrese una opcion: "))
          
         if opcion_1==1 :
-            
-            Usuarios.append(agregar_contacto(Usuarios))
+
+
+            nuevo_usuario = agregar_contacto(Usuarios)
+            if nuevo_usuario is not None:
+                Usuarios.append(nuevo_usuario)
+           
+           
             # print(Usuarios)
             # os.system("pause")#
-            
-            
+           
+           
         elif opcion_1==2:
            mostrar_contacto(Usuarios)
-            
-            
-            
+           
+           
+           
         elif opcion_1==3:
-            print("Hola")
-            os.system("pause")
-            
-            
+            buscar_nombre(Usuarios)
+           
+           
+           
         elif opcion_1==4:
-            print("Hola")
-            os.system("pause")
-            
-            
+            eliminar_usuario(Usuarios)
+           
+           
         elif opcion_1==5:
             bandera_1=(salir())
-            
+           
         else:
             print("Opcion equivocada")
-    
+   
     except:
         print("Ingrese una opcion valida")
         os.system("pause")
- 
