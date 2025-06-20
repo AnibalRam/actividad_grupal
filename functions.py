@@ -22,4 +22,33 @@ def mostrar_contacto(Usuarios):
         print(f"{x}.{Usuarios[x]}")
         
     os.system("pause")    
-    
+
+def buscar_nombre(Usuarios):
+    encontrado=0
+    usuario = input("Ingrese nombre a buscar: ")
+    for sub_usuario in Usuarios:
+        if usuario in sub_usuario:
+            print(f"Usuario encontrado:{sub_usuario}")
+           
+        else:
+            encontrado=encontrado+1
+       
+        if encontrado==len(Usuarios):
+            print("No hay usuarios con ese nombre")
+    os.system("pause")
+
+
+def eliminar_usuario(Usuarios):
+   
+    mostrar_contacto(Usuarios)
+   
+    eliminar=(input("Cual va a eliminar: "))
+    for sub_usuario in Usuarios:
+        if eliminar in sub_usuario:
+            Usuarios.remove(sub_usuario)
+            print(f"Usuario {eliminar} eliminado.")
+            os.system("pause")
+
+
+    mostrar_contacto(Usuarios)
+   
